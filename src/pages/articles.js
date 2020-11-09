@@ -3,6 +3,7 @@ import {graphql} from "gatsby"
 import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 import PageInfo from '../components/PageInfo/PageInfo';
 import styled from 'styled-components';
+import slugify from 'slugify';
 
 const ArticlesWrapper = styled.div`
   display: grid;
@@ -15,48 +16,49 @@ const pageData = {
   paragraph: `While artists work from real to the abstract, architects must work from the abstract to the real.`,
 }
 
-const ArticlesPage = ({data}) => {
-  const {allMdx:{nodes}} = data;
+const ArticlesPage = ({ data }) => {
+  const {
+    allDatoCmsArticle: { nodes },
+  } = data;
   return (
     <>
       <PageInfo title={pageData.title} paragraph={pageData.paragraph} />
       <ArticlesWrapper>
-        {nodes.map(({excerpt, frontmatter: {title, slug, info_1, info_2, featuredImage}}) => (
-          <ArticlePreview key={slug}
-                          title={title}
-                          exerpt={excerpt}
-                          info_1={info_1}
-                          info_2={info_2}
-                          slug = {slug}
-                          image={featuredImage.childImageSharp.fluid} />
+        {nodes.map(({ title, featuredImage, info_1, info_2 }) => (
+          <ArticlePreview
+            key={title}
+            title={title}
+            info_1={info_1}
+            info_2={info_2}
+            image={featuredImage.fluid}
+            slug={slugify(title, { lower: true })}
+          />
         ))}
       </ArticlesWrapper>
     </>
   );
-}
+};
+
+
+
+
 
 export const query = graphql`
-{
-    allMdx {
-        nodes {
-          frontmatter{
-            title
-            info_1
-            info_2
-            slug
-            featuredImage{
-              childImageSharp{
-                fluid(maxWidth:500, maxHeight:320){
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
+  {
+    allDatoCmsArticle {
+      nodes {
+        title
+        featuredImage {
+          fluid(maxWidth: 500) {
+            ...GatsbyDatoCmsFluid_tracedSVG
           }
-          excerpt (pruneLength:20)
         }
+      }
     }
-}    
-`
+  }
+`;
+
+
 
 
 export default ArticlesPage;

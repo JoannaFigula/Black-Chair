@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbee24c0-c28b-4369-b5ee-37444f6bfc96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticlePreview/ArticlePreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticlePreview/ArticlePreview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +77,7 @@
       <workItem from="1602578397595" duration="41387000" />
       <workItem from="1602861979764" duration="858000" />
       <workItem from="1604305903621" duration="4951000" />
+      <workItem from="1604919511238" duration="598000" />
     </task>
     <servers />
   </component>
